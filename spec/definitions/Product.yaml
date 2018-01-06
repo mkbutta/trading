@@ -1,0 +1,19 @@
+type: object
+properties:
+  symbol:
+    description: Product Symbol
+    type: string
+    minLength: 1
+    example: AAPL
+  description:
+    description: Product Description
+    type: string
+    minLength: 1
+  securityType:
+    description: security Type
+    type: string
+    enum:
+      - Equity
+      - Option
+      - MutualFund
+      - FixedIncome

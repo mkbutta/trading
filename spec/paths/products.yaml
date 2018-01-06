@@ -1,0 +1,26 @@
+get:
+    tags:
+      - Product
+    summary: Get products
+
+    # you can use GFM in operation description too: https://guides.github.com/features/mastering-markdown
+    description: |
+      Get list of Products
+
+    # operationId should be unique across the whole specification
+    operationId: getProducts
+
+    # list of parameters for the operation
+    # security schemas applied to this operation
+    security:
+      - main_auth:
+        - 'read:users' # for auth2 provide list of scopes here
+      - api_key: []
+    # overwriting default global produces
+    produces:
+      - application/json
+    responses: # list of responses
+      '200':
+        description: Success
+        schema: # response schema can be specified for each response
+          $ref: '#/definitions/Product'
